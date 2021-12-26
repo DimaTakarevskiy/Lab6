@@ -25,7 +25,7 @@ public class Field extends JPanel {
         repaintTimer.start();
     }
 
-    public void addBalls(){
+    public void addBall(){
         balls.add(new BouncingBall(this));
     }
 

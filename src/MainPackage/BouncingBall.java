@@ -7,23 +7,23 @@ public class BouncingBall implements Runnable{
 
     private Color color;
     private Field field;
-    private Integer MAX_RADIUS;
-    private Integer MIN_RADIUS;
-    private Integer MAX_SPEED;
-    private Double radius;
-    private Integer speed;
-    private Double speedX;
-    private Double speedY;
-    private Double x;
-    private Double y;
+    private static final int MAX_RADIUS = 40;
+    private static final int MIN_RADIUS = 3;
+    private static final int MAX_SPEED = 15;
+    private int radius;
+    private int speed;
+    private double speedX;
+    private double speedY;
+    private double x;
+    private double y;
 
     public BouncingBall(Field field) {
 
         this.field = field;
 
-        radius = Math.random()*(MAX_RADIUS - MIN_RADIUS) + MIN_RADIUS;
+        radius = new Double(Math.random()*(MAX_RADIUS - MIN_RADIUS)).intValue() + MIN_RADIUS;
 
-        speed = Math.toIntExact((Math.round(5 * MAX_SPEED / radius)));
+        speed = new Double(Math.round(5*MAX_SPEED / radius)).intValue();
         if (speed>MAX_SPEED) {
             speed = MAX_SPEED;
         }
